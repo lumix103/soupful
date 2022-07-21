@@ -1,0 +1,35 @@
+{
+  "name": "soupful",
+  "version": "1.0.0",
+  "description": "A Dicord bot for moderation, utilities, and fun.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumix103/soupful.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "nodejs",
+    "js",
+    "node",
+    "javascript"
+  ],
+  "author": "Fabian Torres (https://github.com/lumix103)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lumix103/soupful/issues"
+  },
+  "homepage": "https://github.com/lumix103/soupful#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.15.0",
+    "@discordjs/rest": "^0.5.0",
+    "discord-api-types": "^0.36.2",
+    "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1"
+  }
+}
