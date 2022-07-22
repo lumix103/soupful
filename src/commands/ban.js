@@ -7,29 +7,29 @@ module.exports = {
     .setDescription("Bans a user from the server.")
     .addUserOption((offender) =>
       offender
-        .setName("Offender")
+        .setName("offender")
         .setDescription("User to ban.")
         .setRequired(true)
     )
     .addStringOption((reason) =>
       reason
-        .setName("Reason")
+        .setName("reason")
         .setDescription("Reason for banning user.")
         .setRequired(false)
     )
-    .addIntegerOption((Days) =>
+    .addIntegerOption((days) =>
       days
-        .setName("Days")
+        .setName("days")
         .setDescription(
           "Number of days of messages to delete, must be between 0 and 7, inclusive"
         )
-        .setRequired("false")
+        .setRequired(false)
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   async execute(interaction) {
-    const offender = interaction.options.getUser("Offender");
-    const reason = interaction.optios.getString("Reason");
-    const days = interaction.options.getInteger("Days");
+    const offender = interaction.options.getUser("offender");
+    const reason = interaction.optios.getString("reason");
+    const days = interaction.options.getInteger("days");
 
     if (!offender)
       return await interaction.reply({
@@ -39,7 +39,7 @@ module.exports = {
     // According to the discordjs documentation
     // days has to be within 0 and 7
     // https://discord.js.org/#/docs/discord.js/main/typedef/BanOptions
-    if ((days != null && days < 0) || days > 7)
+    if (days != null || (days < 0 && days > 7))
       return await interaction.reply({
         content:
           "Number of days of messages to delete, must be between 0 and 7, inclusive",

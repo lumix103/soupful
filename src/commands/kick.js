@@ -7,20 +7,20 @@ module.exports = {
     .setDescription("Kicks a user from the server.")
     .addUserOption((offender) =>
       offender
-        .setName("Offender")
+        .setName("offender")
         .setDescription("User to ban.")
         .setRequired(true)
     )
     .addStringOption((reason) =>
       reason
-        .setName("Reason")
+        .setName("reason")
         .setDescription("Reason for banning user.")
         .setRequired(false)
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.KickMembers),
   async execute(interaction) {
-    const offender = interaction.options.getUser("Offender");
-    const reason = interaction.optios.getString("Reason");
+    const offender = interaction.options.getUser("offender");
+    const reason = interaction.optios.getString("reason");
 
     if (!offender)
       return await interaction.reply({

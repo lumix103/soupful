@@ -16,7 +16,7 @@ soupful.commands = new Collection();
 const commands_path = path.join(__dirname, "commands");
 const command_files = fs
   .readdirSync(commands_path)
-  .filer((file) => file.endsWith(".js"));
+  .filter((file) => file.endsWith(".js"));
 
 for (const file of command_files) {
   const file_path = path.join(commands_path, file);
@@ -38,4 +38,4 @@ for (const file of event_files) {
   }
 }
 
-soupful.login(process.env.TOKEN);
+soupful.login(process.env.BOT_TOKEN);
