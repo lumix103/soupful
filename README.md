@@ -9,11 +9,20 @@ changes. So I've decided it will be easier to make a new bot rather than fixing 
 ## Commands
 
 - Ban
+
   - Bans a user if possible.
+
 - Kick
+
   - Kicks a user if possible.
+
 - Ping
+
   - Replies with "pong!"
+
+- Prune Command
+
+  - Delete n amount of new messages in a channel.
 
 ## TODO
 
@@ -24,10 +33,6 @@ changes. So I've decided it will be easier to make a new bot rather than fixing 
 - Status Command
 
   - A command that returns an image showing the user's experience/points.
-
-- Prune Command
-
-  - Kicks all non-active users from a server
 
 - Web Interface
 
@@ -43,7 +48,9 @@ cd soupful
 ```
 
 Afterwards create a .env file or edit your system variables to include
-your bot's token under the variable called `BOT_TOKEN`
+your bot's token under the variable called `BOT_TOKEN`.
+
+Finally run the following npm commands to start the bot.
 
 ```bash
 npm install
