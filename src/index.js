@@ -1,13 +1,18 @@
 const { Client, Collection, Intents } = require("discord.js");
 const fs = require("node:fs");
 const path = require("node:path");
+const mongoose = require("mongoose");
 require("dotenv").config();
+
+// TODO: Add error handling for connection
+// mongoose.connect(process.env.DB);
 
 const soupful = new Client({
   intents: [
     Intents.FLAGS.GUILDS,
     Intents.FLAGS.GUILD_MESSAGES,
     Intents.FLAGS.GUILD_MESSAGE_REACTIONS,
+    Intents.FLAGS.GUILD_MEMBERS,
   ],
 });
 

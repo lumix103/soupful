@@ -19,8 +19,10 @@ module.exports = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.KickMembers),
   async execute(interaction) {
-    const offender = interaction.options.getUser("offender");
-    const reason = interaction.optios.getString("reason");
+    const offender = await interaction.guild.members.fetch(
+      interaction.options.getUser("offender")
+    );
+    const reason = interaction.options.getString("reason");
 
     if (!offender)
       return await interaction.reply({
@@ -30,7 +32,7 @@ module.exports = {
 
     await offender
       .kick(
-        `${interaction.member.displayName} banned ${offender.displayName} because "${reason}"`
+        `${interaction.member.displayName} kicked ${offender.displayName} because "${reason}"`
       )
       .then(() => {
         interaction.reply({
@@ -40,7 +42,7 @@ module.exports = {
       })
       .catch((err) => {
         interaction.reply({
-          content: "Error: Failed to ban the user",
+          content: "Error: Failed to kick the user",
           ephemeral: true,
         });
       });

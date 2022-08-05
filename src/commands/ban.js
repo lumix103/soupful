@@ -27,8 +27,10 @@ module.exports = {
     )
     .setDefaultMemberPermissions(PermissionFlagsBits.BanMembers),
   async execute(interaction) {
-    const offender = interaction.options.getUser("offender");
-    const reason = interaction.optios.getString("reason");
+    const offender = await interaction.guild.members.fetch(
+      interaction.options.getUser("offender")
+    );
+    const reason = interaction.options.getString("reason");
     const days = interaction.options.getInteger("days");
 
     if (!offender)

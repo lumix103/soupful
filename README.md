@@ -24,15 +24,15 @@ changes. So I've decided it will be easier to make a new bot rather than fixing 
 
   - Delete n amount of new messages in a channel.
 
+- Status Command
+
+  - A command that returns an image showing the user's experience/points.
+
 ## TODO
 
 - Experience/Point System
 
   - Reward players with experience/points for their activity on the server
-
-- Status Command
-
-  - A command that returns an image showing the user's experience/points.
 
 - Web Interface
 
