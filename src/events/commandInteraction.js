@@ -1,11 +1,11 @@
-const { execute } = require("./ready");
+const { Events } = require("discord.js");
 
 module.exports = {
-  name: "interactionCreate",
+  name: Events.InteractionCreate,
   once: false,
   async execute(interaction) {
     soupful = interaction.client;
-    if (!interaction.isCommand()) return;
+    if (!interaction.isChatInputCommand()) return;
     const command = soupful.commands.get(interaction.commandName);
     try {
       await command.execute(interaction);

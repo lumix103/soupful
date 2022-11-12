@@ -1,10 +1,9 @@
-const { Schema, default: mongoose, model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const GuildUserSchema = new Schema({
   guild_id: {
     type: String,
-    require: true,
-    unique: true,
+    required: true,
   },
   experience: {
     type: Number,
@@ -16,6 +15,8 @@ const GuildUserSchema = new Schema({
   },
 });
 
+const GuildUser = model("point_guild_user", GuildUserSchema);
+
 const UserSchema = new Schema({
   user_id: {
     type: String,
@@ -23,11 +24,10 @@ const UserSchema = new Schema({
     unique: true,
   },
   guilds_data: {
-    type: [GuildUserSchema],
-    default: undefinded,
+    type: [{ type: Schema.Types.ObjectId, ref: "point_guild_user" }],
   },
 });
 
 const User = model("point_user", UserSchema);
 
-module.exports = User;
+module.exports = { User, GuildUser };

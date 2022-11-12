@@ -1,19 +1,17 @@
-// const { Greeting } = require("discord-canvas");
-// const { MessageAttachment } = require("discord.js");
-// TODO: Greeting class is not working as intended
-// will need to find another alternative to discord-canvas
+const { Events } = require("discord.js");
+
 module.exports = {
-  name: "guildMemberAdd",
+  name: Events.GuildMemberAdd,
   once: false,
   async execute(member) {
-    // const greet = new Greeting()
-    //   .setAvatar(member.displayAvatarURL({ dynamic: false, format: "png" }))
-    //   .setUsername(member.displayName)
-    //   .setDiscriminator(member.discriminator)
-    //   .setText("Welcome!");
-    // greet.toAttachment().then((data) => {
-    //   const attachment = new MessageAttachment(data, "welcome.png");
-    //   member.guild.systemChannel.send({ files: [attachment] });
-    // });
+    channel = member.guild.channels.cache.find(
+      (chan) => chan.name.toLowerCase() === "welcome"
+    );
+
+    if (!channel) {
+      return;
+    }
+
+    channel.send(`Welcome ${member.user.username} to the server!`);
   },
 };
