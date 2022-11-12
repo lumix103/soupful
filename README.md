@@ -28,11 +28,15 @@ changes. So I've decided it will be easier to make a new bot rather than fixing 
 
   - A command that returns an image showing the user's experience/points.
 
+- Experience/Point System
+
+  - Users gain experience through chatting.
+
 ## TODO
 
 - Experience/Point System
 
-  - Reward players with experience/points for their activity on the server
+  - Make the experience system more interactive.
 
 - Web Interface
 

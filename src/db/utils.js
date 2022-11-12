@@ -29,12 +29,10 @@ module.exports.createGuildUser = async function (userId, guildId) {
 };
 
 module.exports.fetchGuildUser = async function (userId, guildId) {
-  console.log("fetch Guild User");
-  console.log(`user: ${userId}`);
   let user = await module.exports.fetchUser(userId, guildId);
-  console.log("Got a user");
+
   let guild = user.guilds_data.find((data) => data.guild_id === guildId);
-  console.log(`fetch Guild User: ${guild}`);
+
   if (!guild) {
     return await module.exports.createGuildUser(userId, guildId);
   } else {
