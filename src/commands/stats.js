@@ -8,7 +8,6 @@ module.exports = {
     .setName("stats")
     .setDescription("Show off your level with this command."),
   async execute(interaction) {
-    console.log("stats");
     let guildUser = await fetchGuildUser(
       interaction.member.id,
       interaction.guildId
