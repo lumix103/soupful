@@ -32,6 +32,10 @@ changes. So I've decided it will be easier to make a new bot rather than fixing 
 
   - Users gain experience through chatting.
 
+- Poll Command
+
+  - Makes a simple poll.
+
 ## TODO
 
 - Experience/Point System
